@@ -14,4 +14,5 @@ class TodoController extends MY_Controller {
         $this->js_listeners[] = '';
         $this->layout('welcome_message');
 	}
+	
 }

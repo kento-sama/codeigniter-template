@@ -10,7 +10,8 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- TODO: add css plugins here -->
-    <!-- <link href="<?php // echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" /> -->
+    <!-- <link href="<//?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" />  -->
+    <link rel="stylesheet" href="<?php echo base_url();?>css/boostrap.min.css">
 
 </head>
 <body>
