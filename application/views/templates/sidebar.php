@@ -9,7 +9,7 @@
                     </a>
                 </li> -->
                
-                <footer>
+                <!-- <footer>
                     <center>
                     <p style="padding-left: 25%; padding-top: 100%;" class="copyright pull-left">
                         &nbsp;&nbsp;&copy;
@@ -19,17 +19,16 @@
                     <a href="#"> &nbsp;TODO </a>
                 </p></center>
                 
-                </footer>
+                </footer> -->
                 <!-- </li>  -->
             </ul>
         </div>
-        </div>
-        </div>
-        <div class="main-panel">
-           <div class="modal fade" id="modal-container" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        
-                    </div>
-                </div>
+    </div>
+</div>
+<div class="main-panel">
+   <div class="modal fade" id="modal-container" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
             </div>
+        </div>
+    </div>

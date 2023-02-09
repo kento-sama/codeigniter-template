@@ -5,8 +5,17 @@ Todo = function () {
 	var fn = function() {
 	}
 
+	var table = function() {
+
+	}
+
+	var modal = function() {
+
+	}
+
 	return {
 		property: property,
-		fn: fn
+		fn      : fn,
+		table   : modal
 	}
 }

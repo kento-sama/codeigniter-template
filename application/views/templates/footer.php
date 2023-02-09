@@ -7,19 +7,9 @@
     var base_url = "<?php echo base_url();?>";
 </script>
 
-<!-- add row -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-
-<!-- form modal -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
 <!--   Core JS Files   -->
-<script src="<?= base_url();?>assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
-<script src="<?= base_url();?>assets/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<?= base_url();?>assets/js/material.min.js" type="text/javascript"></script>
+<!-- <script src="<?php echo base_url();?>assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/js/bootstrap.min.js" type="text/javascript"></script> -->
 
 
 <script src="<?php echo base_url('assets/js/helper.js');?>"></script>
