@@ -15,11 +15,13 @@
 
     <!-- Bootstrap -->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 
     <!-- dataTables -->
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/jquery.dataTables.min.css">
 
 </head>
 <body>
