@@ -1,6 +1,24 @@
 
-        </div>
+        </div>              
     </div>
+
+    <!-- // ADDING BOOTSTRAP // -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css%22%3E
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js%22%3E</script>
+
+    <!-- // ADDING DataTable // -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css%22%3E
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js%22%3E</script>
+
+    <!-- //ADDING JQuery // -->
+
+    <script src="jquery-3.6.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js%22%3E</script>
+
+
+
 </body>
 
 <script>
