@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css%22%3E"/>
 
     <!-- Bootstrap-->
-    <link href="<?php // echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css%22%3E"/>
 
 </head>
