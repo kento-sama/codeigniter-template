@@ -11,11 +11,10 @@
     <meta name="viewport" content="width=device-width" />
 
     <!-- DataTable -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css%22%3E"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css"/>
 
     <!-- Bootstrap-->
-    <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css%22%3E"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
 
 </head>
 <body>

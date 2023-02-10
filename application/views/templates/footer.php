@@ -2,14 +2,13 @@
         </div>
     </div>
     <!--jQuery-->
-    <script src="jquery-3.6.1.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js%22%3E"></script> 
+    <script type = "text/javascript" src="assets/js/jquery-3.6.3.min.js"></script>
 
     <!--DataTable-->
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js%22%3E"></script>
+    <script type="text/javascript" src="assets/js/datatables.min.js"></script>
 
     <!--Bootstrap-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js%22%3E"></script>
+    <script type = "text/javascript" src="assets/js/bootstrap.min.js"></script>
 </body>
 
 <script>
