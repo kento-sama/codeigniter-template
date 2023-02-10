@@ -5,9 +5,7 @@ class TodoController extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		// load model here
-		$this->load->database();
-		
+		// load model here	
 	}
 
 	public function index()
@@ -17,10 +15,4 @@ class TodoController extends MY_Controller {
         $this->js_listeners[] = '';
         $this->layout('welcome_message');
 	}
-	public function get_data(){
-
-		$query = $this->db->get('mckie');
-		return $query->result_array();
-	}
-	
 }
