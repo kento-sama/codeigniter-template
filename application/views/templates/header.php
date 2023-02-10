@@ -13,6 +13,14 @@
     <!-- <link href="<//?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" />  -->
     <link rel="stylesheet" href="<?php echo base_url();?>css/boostrap.min.css">
 
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- dataTables -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
+
 </head>
 <body>
     <div class="wrapper">
