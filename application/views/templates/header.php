@@ -11,10 +11,10 @@
     <meta name="viewport" content="width=device-width" />
 
     <!-- DataTable -->
-    <link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/datatables.min.css"/>
 
     <!-- Bootstrap-->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css"/>
 
 </head>
 <body>
