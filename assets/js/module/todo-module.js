@@ -10,7 +10,7 @@ Todo = function () {
 	}
 
 	var modal = function() {
-
+		
 	}
 
 	return {

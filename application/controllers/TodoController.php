@@ -11,7 +11,7 @@ class TodoController extends MY_Controller {
 	public function index()
 	{
 		$this->modules[]      = 'todo';
-        $this->js_listeners[] = '';
-        $this->layout('welcome_message');
+		$this->js_listeners[] = '';
+    $this->layout('welcome_message');
 	}
 }
