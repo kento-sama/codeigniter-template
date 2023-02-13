@@ -4,12 +4,15 @@
 
     <!-- jQuery -->
     <script type="text/javascript"src="assets/js/jquery-3.6.3.js"></script>
+    <link href="<?php echo base_url();?>assets/js/jquery-3.6.3.js" />
 
     <!-- dataTable -->
     <script type="text/javascript"src="assets/datatables/media/js/dataTables.bootstrap.min.js"></script>
+    <link href="<?php echo base_url();?>assets/datatables/media/js/dataTables.bootstrap.min.js"/>
 
     <!-- bootstarap -->
     <script type="text/javascript"src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <link href="<?php echo base_url();?>assets/bootstrap/js/bootstrap.min.js"/>
 
 </body>
 
