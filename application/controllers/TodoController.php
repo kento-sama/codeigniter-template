@@ -5,9 +5,7 @@ class TodoController extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();
-			$this->load->database();
 			$this->load->model('productmodel');
-			$this->load->library('session');
 	}
 
 	public function index()
