@@ -2,17 +2,15 @@
         </div>
     </div>
 
-     <!-- jQuery -->
-     <script type="text/javascript"src="assets/js/jquery-3.6.3.js"></script>
-    <link href="<?php echo base_url();?>assets/js/jquery-3.6.3.js" />
+    <!-- jQuery -->
+    <script src="<?php echo base_url(); ?>aassets/js/jquery-3.6.3.js"></script>
 
     <!-- dataTable -->
-    <script type="text/javascript"src="assets/datatables/media/js/dataTables.bootstrap.min.js"></script>
-    <link href="<?php echo base_url();?>assets/datatables/media/js/dataTables.bootstrap.min.js"/>
+    <script src="<?php echo base_url(); ?>assets/datatables/media/js/dataTables.bootstrap.min.js"></script>
 
     <!-- bootstarap -->
-    <script type="text/javascript"src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <link href="<?php echo base_url();?>assets/bootstrap/js/bootstrap.min.js"/>
+    <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
+   
 
 
 
