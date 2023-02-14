@@ -7,12 +7,10 @@
     var base_url = "<?php echo base_url();?>";
 </script>
 
-<!--   Core JS Files   -->
-<!-- <script src="<?php echo base_url();?>assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url();?>assets/js/bootstrap.min.js" type="text/javascript"></script> -->
 
-
-<script src="<?php echo base_url('assets/js/helper.js');?>"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.slim.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/helper.js"></script>
 
 <!--   JS plugins -->
 <?php if(isset($js_plugins)): ?>
