@@ -6,8 +6,7 @@ class TodoController extends MY_Controller {
 	public function __construct() {
 		parent::__construct();
 		// load model here
-		$this->load->database();
-		$this->load->model('add_model');	
+		$this->load->model('PlayerModel');	
 	}
 
 	public function index()
@@ -33,10 +32,11 @@ class TodoController extends MY_Controller {
 					 'last_name'=>$this->input->post('last_name'),
 					 'age'=>$this->input->post('age')
 		];
-			$response=$this->add_model->saverecords($data);
+			$response=$this->PlayerModel->saverecords($data);
 			if($response==true){
 				$this->session->set_flashdata('success','Successfully Added!');
-				redirect(base_url('todo'));
+				// redirect(base_url('todo'));
+				redirect('todo');
 			}
 			else{
 					echo "404 error !";
