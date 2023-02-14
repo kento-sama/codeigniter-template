@@ -12,13 +12,10 @@ class TodoController extends MY_Controller {
 
 	public function index()
 	{	
-		$this->load->view('templates/header');
-		$this->load->view('templates/navbar');
-		$this->load->view('welcome_message');
-		$this->load->view('templates/footer');
-		// $this->modules[]      = 'todo';
-        // $this->js_listeners[] = '';
-        // $this->layout('welcome_message');
+		
+		 $this->modules[]      = 'todo';
+         $this->js_listeners[] = '';
+         $this->layout('welcome_message');
 		
 	}
 	public function create(){

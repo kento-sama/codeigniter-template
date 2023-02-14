@@ -68,7 +68,7 @@ if($this->session->flashdata('success'))
 						<div class="form-group">
 							<label for="age">Age</label>
 							<!-- <input type="text" class="form-control" id="age" placeholder="Age"> -->
-							<input type="number" class="form-control" name="age" id="age" min="18" max="65" placeholder="Enter Age">
+							<input type="number" class="form-control" name="age" id="age" min="1" max="100" placeholder="Enter Age">
 						</div>
 					</div>
 					<div class="modal-footer border-top-0 d-flex justify-content-center">
