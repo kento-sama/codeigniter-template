@@ -13,7 +13,7 @@
     <!-- bootstarap -->
     <script type="text/javascript"src="assets/bootstrap/js/bootstrap.min.js"></script>
     <link href="<?php echo base_url();?>assets/bootstrap/js/bootstrap.min.js"/>
-
+    
 </body>
 
 <script>
