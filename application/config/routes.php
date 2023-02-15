@@ -54,3 +54,5 @@ $route['404_override'] = 'errors/page_missing';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['todo'] = 'todocontroller';
+$route['list'] = 'todocontroller/todolist';
+// $route['test'] = 'todocontroller/test';
