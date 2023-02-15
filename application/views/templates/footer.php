@@ -32,3 +32,13 @@
         <script src="<?php echo base_url('assets/js').'/'.$js.'.js';?>"></script>
     <?php endforeach; ?>
 <?php endif;?>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        <?php if(isset($js_listeners)):?>
+	    	<?php foreach ($js_listeners as $listeners): ?>
+	    		<?php echo $listeners; ?>;
+	    	<?php endforeach;?>
+        <?php endif;?>
+    });
+</script>

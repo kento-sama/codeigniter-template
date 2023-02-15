@@ -3,19 +3,20 @@ Todo = function () {
 	var property = {};
 
 	var fn = function() {
-	}
+	}();
 
 	var table = function() {
 
-	}
+	}();
 
 	var modal = function() {
 
-	}
+	}();
 
 	return {
 		property: property,
 		fn      : fn,
-		table   : modal
+		table   : table,
+		modal	: modal
 	}
 }
