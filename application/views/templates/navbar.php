@@ -1,11 +1,9 @@
-<!--  <nav class="navbar navbar-transparent navbar-absolute">
-    <div class="container-fluid">
-        <div class="navbar-header">
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li></li>
-            </ul>
-        </div>
-    </div>
-</nav> -->
+
+<nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="<?php echo base_url();?>assets/img/dota.png" width="40" height="40"  style="margin-left:2px;"> Dota2
+    </a>
+  </div>
+</nav>
