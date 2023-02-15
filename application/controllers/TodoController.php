@@ -1,7 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Methods: GET, OPTIONS, POST");
 class TodoController extends MY_Controller {
 
 	public function __construct() {
@@ -30,13 +28,11 @@ class TodoController extends MY_Controller {
         $item = $this->input->post('list');
 		$data = array("item_desc"=>$item,"status"=>'active');
 		// echo $item;
-		$this->load->model("ListInsert");
+		$this->load->model("TodoModel");
 
-		$x = $this->ListInsert->insertList($data);
+		$x = $this->TodoModel->insertList($data);
 
 		echo $x;
 		
 	}
-	
-	
 }
