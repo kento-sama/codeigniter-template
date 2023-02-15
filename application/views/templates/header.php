@@ -12,14 +12,10 @@
     <!-- TODO: add css plugins here -->
    
     <!-- Bootstrap -->
-
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css">
 
     <!-- dataTables -->
-
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/dataTables.dataTables.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/dataTables.css">
 
 </head>
 <body>
