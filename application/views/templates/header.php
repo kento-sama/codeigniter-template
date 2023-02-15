@@ -12,6 +12,9 @@
     <!-- TODO: add css plugins here -->
     <!-- <link href="<?php // echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" /> -->
 
+    <link href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="<?php echo base_url();?>assets/datatables/datatables.css" rel="stylesheet" />
+
 </head>
 <body>
     <div class="wrapper">

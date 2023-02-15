@@ -8,8 +8,11 @@
 </script>
 
 <!--   Core JS Files   -->
-<!-- <script src="<?php echo base_url();?>assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url();?>assets/js/bootstrap.min.js" type="text/javascript"></script> -->
+<!-- <script src="<?php //echo base_url();?>assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="<?php //echo base_url();?>assets/js/bootstrap.min.js" type="text/javascript"></script> -->
+<script src="<?php echo base_url();?>assets/js/jquery-3.6.3.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/datatables/datatables.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.js" type="text/javascript"></script>
 
 
 <script src="<?php echo base_url('assets/js/helper.js');?>"></script>
