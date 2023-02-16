@@ -6,12 +6,13 @@ function test(val){
             type:"post",
             data:{list:val},
             success:function(returnedData){
-              if(returnedData){
-                $('#create_list').modal('hide')
-                alert("success!");
-              }else{
-                alert("failed!");
-              }
+              alert(returnedData);
+              // if(returnedData){
+              //   $('#create_list').modal('hide')
+              //   alert("success!");
+              // }else{
+              //   alert("failed!");
+              // }
             }
         })
     }else{

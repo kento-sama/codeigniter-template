@@ -7,7 +7,7 @@
                     CREATE TO DO LIST
                 </div>
                 <div class="card-body">
-                    <button type="button" class="btn btn-primary btn-block btn-sm" data-toggle="modal" data-target="#create_list">
+                    <button type="button" class="btn btn-primary btn-block btn-sm" id="thatsme">
                         ADD ITEM
                     </button>
                 </div>
@@ -34,7 +34,8 @@
       </div>
       <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" onclick="test(item.value)">Create</button>
+            <!-- <button type="button" class="btn btn-primary" onclick="test(item.value)">Create</button> -->
+            <button type="button" class="btn btn-primary">Create</button>
       </div>
     </div>
   </div>
