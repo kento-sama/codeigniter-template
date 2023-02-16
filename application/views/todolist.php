@@ -14,6 +14,21 @@
             </div>
         </div>
         <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header lead text-lg text-center">TO DO LIST</div>
+                <div class="card-body">
+                    <table class="table table-bordered table-hover maintable">
+                        <thead>
+                            <tr>
+                                <th>TASKS</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>

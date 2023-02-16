@@ -1,10 +1,6 @@
 Todo = function () {
 	var controller = base_url + 'TodoController/'
 	var property = {};
-	// function buttons(){
-	// 	$show = $("button#thatsme");
-	// 	$create = $("button#createlist");
-	// }
 	var fn = function(){
 		function modal_view(){
 			$("button#thatsme").unbind();
@@ -37,6 +33,20 @@ Todo = function () {
 		}
 	}();
 	var table = function(){
+		function tables(val){
+			// var data = JSON.parse(val);
+			var table = $(".maintable").DataTable({});
+			table.row.add([1,2]).draw();
+			var item = val[0];
+			var status = val[1];
+			item.forEach(function(ele,index){
+				table.row.add([ele,status[index]]).draw();
+			})
+			
+		}
+		return{
+			tables:tables
+		}
 	}();
 	var modal = function(){
 		function todo_modal(){
