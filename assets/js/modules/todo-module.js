@@ -1,11 +1,11 @@
 Todo = function () {
-	var controller = base_url + 'todo/'
+	var controller = base_url + 'TodoController/'
 	var property = {};
 
 	var fn = function() {
 		function add_todo() {
-			$('button#add-todo').unbind();
-			$('button#add-todo').on('click', function() {
+			$('button#addbtn').unbind();
+			$('button#addbtn').on('click', function() {
 				modal.add_modal();
 
 				return false;
@@ -29,7 +29,17 @@ Todo = function () {
 
 	var modal = function() {
 		function add_modal() {
-			console.log("open modal");
+			$.ajax({
+				url: controller+"view_modal ",
+				datatype: 'html',
+				success: function(response) {
+					//console.log(response);
+				  show_modal(response);
+				},
+				complete: function(){
+					// config();
+				},
+			  });
 		}
 
 		return {
@@ -44,3 +54,5 @@ Todo = function () {
 		modal   : modal
 	}
 }();
+
+

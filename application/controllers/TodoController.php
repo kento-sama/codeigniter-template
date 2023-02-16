@@ -17,8 +17,8 @@ class TodoController extends MY_Controller {
          $this->layout('welcome_message');
 		
 	}
-	public function create(){
-		
+	public function view_modal(){
+		$this->load->view('addModal');
 	}
 	public function savedata()
 	{
