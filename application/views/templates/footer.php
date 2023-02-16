@@ -5,16 +5,23 @@
  <!-- // ADDING BOOTSTRAP // -->
 
     <script type = 'text/javascript' src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
-
- <!-- // ADDING DataTable // -->
-  
-    <script type = 'text/javascript' src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
-    <script type = 'text/javascript' src="<?php echo base_url(); ?>assets/js/dataTables.bootstrap.min.js"></script>
-    <script type = 'text/javascript' src="<?php echo base_url(); ?>assets/js/dataTables.dataTables.min.js"></script>
+   
     
 <!-- //ADDING JQuery // -->
+<script type = 'text/javascript' src="<?php echo base_url(); ?>assets/js/jquery-3.6.3.js"></script>
 
-    <script type = 'text/javascript' src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+    <!-- // ADDING DataTable // -->
+
+<script type = 'text/javascript' src="<?php echo base_url(); ?>assets/js/datatables.min.js"></script>
+<script type = 'text/javascript' src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
+
+
+
+<script>
+  $(document).ready(function() {
+    $('#playertbl').DataTable();
+  });
+</script>
 
 
     

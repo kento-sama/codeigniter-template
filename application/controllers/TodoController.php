@@ -13,12 +13,12 @@ class TodoController extends MY_Controller {
 	{	
 		
 		 $this->modules[]      = 'todo';
-         $this->js_listeners[] = '';
+         $this->js_listeners[] = 'Todo.fn.add_todo()';
          $this->layout('welcome_message');
 		
 	}
-	public function create(){
-		
+	public function view_modal(){
+		$this->load->view('addModal');
 	}
 	public function savedata()
 	{

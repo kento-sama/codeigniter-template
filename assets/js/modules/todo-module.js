@@ -1,22 +1,58 @@
 Todo = function () {
-	var controller = base_url + 'todo/'
+	var controller = base_url + 'TodoController/'
 	var property = {};
 
 	var fn = function() {
+		function add_todo() {
+			$('button#addbtn').unbind();
+			$('button#addbtn').on('click', function() {
+				modal.add_modal();
+
+				return false;
+			});
+		}
+
+		return {
+			add_todo: add_todo
+		}
 	}();
 
 	var table = function() {
+		function generate_table() {
+			// TODO: generate datatable here
+		}
 
+		return {
+			generate_table: generate_table
+		}
 	}();
 
 	var modal = function() {
+		function add_modal() {
+			$.ajax({
+				url: controller+"view_modal ",
+				datatype: 'html',
+				success: function(response) {
+					//console.log(response);
+				  show_modal(response);
+				},
+				complete: function(){
+					// config();
+				},
+			  });
+		}
 
+		return {
+			add_modal: add_modal
+		}
 	}();
 
 	return {
 		property: property,
 		fn      : fn,
 		table   : table,
-		modal	: modal
+		modal   : modal
 	}
-}
+}();
+
+
