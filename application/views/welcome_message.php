@@ -1,4 +1,4 @@
-
+<button id="add-todo" type="button" class="btn btn-danger">add</button>
 <div class="row">
  <div class="col-md-12">
 	<div class="card">
@@ -20,7 +20,7 @@ if($this->session->flashdata('success'))
 <?php
 }?>
 	<div class="card-body">
-		<table class="table table table-border">
+		<table id="playertbl" class="table table table-border">
 			<thead>
 				<tr class="text-center">
 					<th>First Name</th>

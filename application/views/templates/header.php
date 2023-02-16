@@ -4,22 +4,25 @@
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url();?>assets/img/apple-icon.png" />
-    <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/img/favicon.png" />
+    <!-- <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/img/favicon.png" /> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>TODO LIST</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- TODO: add css plugins here -->
-   
-    <!-- Bootstrap -->
+    
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"> -->
 
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 
     <!-- dataTables -->
+     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/jquery.dataTables.min.css"> 
 
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/dataTables.dataTables.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/jquery.dataTables.min.css">
+
+     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.13.2/datatables.min.css"/> -->
+
+     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/datatables.min.css"> 
 
 </head>
 <body>
