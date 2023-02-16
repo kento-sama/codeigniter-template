@@ -11,7 +11,7 @@ class TodoController extends MY_Controller {
 	public function index()
 	{
 		$this->modules[]      = 'todo';
-		$this->js_listeners[] = '';
+		$this->js_listeners[] = 'Todo.fn.add_product()';
     $this->layout('product_view');
 	}
 
@@ -33,5 +33,10 @@ class TodoController extends MY_Controller {
 				redirect('todo');
 			}
 		}
+	}
+
+	// Modal View
+	public function viewModal() {
+		$this->load->view('modal_view');
 	}
 }
