@@ -11,7 +11,7 @@ class TodoController extends MY_Controller {
 	public function index()
 	{
 		$this->modules[]      = 'todo';
-		$this->js_listeners[] = 'Todo.fn.add_product()';
+		$this->js_listeners[] = 'Todo.fn.add_product(), Todo.table.view_table()';
     $this->layout('product_view');
 	}
 
@@ -35,8 +35,15 @@ class TodoController extends MY_Controller {
 		}
 	}
 
-	// Modal View
+	// Function to load the modal view
 	public function viewModal() {
 		$this->load->view('modal_view');
+	}
+
+	// Getting data from the database
+	public function getData(){
+		$this->load->model('productmodel');
+		$data = $this->productmodel->getrecords();
+		echo json_encode($data);
 	}
 }

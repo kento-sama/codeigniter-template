@@ -4,4 +4,9 @@
       $this->db->insert('products', $data);
       return true;
     }
+
+    function getrecords(){
+      $query = $this->db->get('products');
+      return $query->result();
+    }
   }
