@@ -9,31 +9,18 @@ class TodoController extends MY_Controller {
 
 	public function index()
 	{
-		
-		// $this->modules[]      = 'todo';
-        // $this->js_listeners[] = 'Todo.fn.thatsme';
-        // $this->layout('welcome_message');
+		$this->layout('welcome_message');
 	}
 	public function todolist()
 	{
-		$test = "test";
-		$todolist = array();
-		$item = array();
-		$status = array();
 		$this->modules[]      = 'todo'; //module name
-       
-		$this->load->model("TodoModel");
-	 	$results = $this->TodoModel->fetchTask();
-		foreach($results as $row){
-			array_push($item,$row->item_desc);
-			array_push($status,$row->status);
-		}
-		array_push($todolist,$item,$status);
-		$todolist = json_encode($todolist);
-		
-		$this->js_listeners[] = 'Todo.fn.modal_view(),Todo.table.tables('.$todolist.')'; 
-
+		$this->js_listeners[] = 'Todo.fn.modal_view(),Todo.table.tables()'; 
         $this->layout('todolist');
+	}
+	public function fetch_task(){
+		$this->load->model("TodoModel");
+		$results = $this->TodoModel->fetchTask();
+		echo json_encode($results);
 	}
 	public function todo_modal()
 	{

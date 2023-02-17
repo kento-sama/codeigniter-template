@@ -4,8 +4,9 @@
             return $this->db->insert("todo",$data);
         }
         public function fetchTask(){
-            $query = "select * from todo";
-            $result = $this->db->query($query);
+            $this->db->select("*");
+            $this->db->from("todo");
+            $result = $this->db->get();
             return $result->result();
         }
     }
