@@ -17,16 +17,6 @@ Todo = function () {
 		}
 	}();
 
-	var table = function() {
-		function generate_table() {
-			// TODO: generate datatable here
-		}
-
-		return {
-			generate_table: generate_table
-		}
-	}();
-
 	var modal = function() {
 		function add_modal() {
 			$.ajax({
@@ -44,6 +34,26 @@ Todo = function () {
 
 		return {
 			add_modal: add_modal
+		}
+	}();
+	var table = function() {
+		function generate_table() {
+			//Get data from server using CodeIgniter
+			$.ajax({
+				url: controller+"data_Table",
+				dataType: 'json',
+				success: function() {
+					// Create DataTable
+					$("#playertbl").DataTable();
+				},
+				error: function () {
+					alert('Error retrieving player data!');
+				}
+			});
+		}
+
+		return {
+			generate_table: generate_table
 		}
 	}();
 

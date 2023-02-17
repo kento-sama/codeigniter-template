@@ -26,19 +26,20 @@ if($this->session->flashdata('success'))
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Age</th>
-					<th>Update/Delete</th>
+					<th>Update</th>
+					<th>Delete</th>
 				</tr>
 			</thead>
 			<tbody class="text-center">
-				<tr>
-					<td>Rejay</td>
-					<td>Flora</td>
-					<td>26</td>
-					<td>
-					<button type="button" class="btn btn-warning">Edit</button>
-					<button type="button" class="btn btn-danger">Delete</button>
-					</td>
-				</tr>
+			<?php foreach ($players as $player): ?>
+            <tr>
+                <td><?= $player->first_name ?></td>
+                <td><?= $player->last_name ?></td>
+                <td><?= $player->age ?></td>
+				<td><button type="button" class="btn btn-warning">Edit</button></td>
+				<td><button type="button" class="btn btn-danger">Delete</button></td>
+            </tr>
+        	<?php endforeach; ?>
 			</tbody>
 		</table>
 	</div>
