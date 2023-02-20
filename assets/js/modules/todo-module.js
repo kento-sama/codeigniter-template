@@ -18,26 +18,25 @@ Todo = function () {
 
 	var table = function() {
 		function view_table(){
-			$.ajax({
-        url: controller + "getData",
-        method: 'get',
-        dataType: 'json',
-        success: function(data) {
-            $('#productTable').DataTable({
-                data: data,
-                columns: [
-                    { data: 'product_name' },
-                    { data: 'product_price' },
-										{ data: 'product_category'},
-										{
-											render: function (data, type, row) {
-													return '<button class="btn btn-warning">Edit</button>, <button class="btn btn-danger">Delete</button>';
-											}
-									}
-                ]
-            });
-        }
-    });
+			$('table#productTable').DataTable().destroy();
+			$('table#productTable').DataTable({
+				ajax: {
+					url: controller + "getData",
+					type: 'GET',
+					dataType: 'json',
+					dataSrc: '',
+				},
+				columns: [
+					{data: 'product_name'},
+					{data: 'product_price'},
+					{data: 'product_category'},
+					{
+						render: function(){
+							return '<button class="btn btn-warning">Edit</button> <button class="btn btn-danger">Delete</button>';
+						}
+					}
+				]
+			});
 		}
 		return {
 			view_table : view_table

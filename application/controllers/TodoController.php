@@ -11,7 +11,8 @@ class TodoController extends MY_Controller {
 	public function index()
 	{
 		$this->modules[]      = 'todo';
-		$this->js_listeners[] = 'Todo.fn.add_product(), Todo.table.view_table()';
+		$this->js_listeners[] = 'Todo.fn.add_product()';
+		$this->js_listeners[] = 'Todo.table.view_table()';
     $this->layout('product_view');
 	}
 
@@ -24,7 +25,7 @@ class TodoController extends MY_Controller {
 			$data['product_category'] = $this->input->post('product_category');
 
 			$response = $this->productmodel->saverecords($data);
-			if ($response = true){
+		if ($response = true){
 				$this->session->set_flashdata('status', 'Successful Entry!');
 				redirect('todo');
 			}
