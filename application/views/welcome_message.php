@@ -20,9 +20,10 @@ if($this->session->flashdata('success'))
 <?php
 }?>
 	<div class="card-body">
-		<table id="playertbl" class="table table table-border">
+		<table id="playertbl"  class="cell-border stripe" style="width:100%">
 			<thead>
-				<tr class="text-center">
+				<tr >
+					<th>ID</th>
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Age</th>
@@ -30,16 +31,7 @@ if($this->session->flashdata('success'))
 					<th>Delete</th>
 				</tr>
 			</thead>
-			<tbody class="text-center">
-			<?php foreach ($players as $player): ?>
-            <tr>
-                <td><?= $player->first_name ?></td>
-                <td><?= $player->last_name ?></td>
-                <td><?= $player->age ?></td>
-				<td><button type="button" class="btn btn-warning">Edit</button></td>
-				<td><button type="button" class="btn btn-danger">Delete</button></td>
-            </tr>
-        	<?php endforeach; ?>
+			<tbody >
 			</tbody>
 		</table>
 	</div>
