@@ -5,8 +5,7 @@
         }
         public function fetchTask(){
             $this->db->select("*");
-            $this->db->from("todo");
-            $result = $this->db->get();
+            $result = $this->db->get("todo");
             return $result->result();
         }
     }

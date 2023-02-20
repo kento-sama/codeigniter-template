@@ -32,22 +32,22 @@ Todo = function () {
 			add_list:add_list
 		}
 	}();
-	var table = function(){
-		function tables(val){
-			var table = $(".maintable").DataTable({});
-			$.ajax({
-				url:controller+"fetch_task",
-				method:"GET",
-				success:function(returnedData){
-					var dataArr = JSON.parse(returnedData);
-					dataArr.forEach(function(element){
-						table.row.add([element['item_desc'],element['status']]).draw();
-					});
-				}
+	var tables = function(){
+		function gen_table(){
+			// alert("Im here!");
+			$("#maintable").DataTable({
+				ajax:{
+					url: controller + "fetch_task",
+					dataSrc: ''
+				},
+				columns: [
+					{ data: 'item_desc' },
+					{ data: 'status' },
+				]
 			})
 		}
 		return{
-			tables:tables
+			gen_table:gen_table
 		}
 	}();
 	var modal = function(){
@@ -71,7 +71,7 @@ Todo = function () {
 	return {
 		property: property,
 		fn      : fn,
-		table   : table,
+		tables   : tables,
 		modal	: modal
 	}
 }();

@@ -14,7 +14,8 @@ class TodoController extends MY_Controller {
 	public function todolist()
 	{
 		$this->modules[]      = 'todo'; //module name
-		$this->js_listeners[] = 'Todo.fn.modal_view(),Todo.table.tables()'; 
+		$this->js_listeners[] = 'Todo.fn.modal_view()'; 
+		$this->js_listeners[] = 'Todo.tables.gen_table()'; 
         $this->layout('todolist');
 	}
 	public function fetch_task(){

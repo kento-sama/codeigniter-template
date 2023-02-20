@@ -17,7 +17,7 @@
             <div class="card">
                 <div class="card-header lead text-lg text-center">TO DO LIST</div>
                 <div class="card-body">
-                    <table class="table table-bordered table-hover maintable">
+                    <table class="table table-bordered table-hover" id="maintable">
                         <thead>
                             <tr>
                                 <th>TASKS</th>
