@@ -13,17 +13,18 @@
   </div>
 
   <!-- Table View -->
-  <div style="margin: 20px;">
-    <table class="table table-hover" id="productTable">
+<div style="margin: 20px;">
+    <table class="table table-bordered table-hover table-striped text-center" id="productTable" style="width:100%;">
       <thead>
         <tr>
-          <th scope="col">Product Name</th>
-          <th scope="col">Price</th>
-          <th scope="col">Category</th>
-          <th scope="col">Action</th>
+          <th class="text-center" scope="col">Product Name</th>
+          <th class="text-center" scope="col">Price</th>
+          <th class="text-center" scope="col">Category</th>
+          <th class="text-center" scope="col">Action</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody >
+      </tbody>
     </table>
   </div>
 </div>
