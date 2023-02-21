@@ -12,7 +12,7 @@
 <body>
 
 <div class="container">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">MyPets</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,11 +33,18 @@
   </nav>
 
   <div class="container">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Add New Pet
-    </button>  
-
+    <div class="row">
+      <div class="col-md-12 mt-4">
+        <div class="card">
+          <div class="card-header">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Add New Pet
+            </button>
+          </div>
+        </div> 
+      </div> 
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -47,7 +54,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action="<?php echo base_url('TodoController/insert'); ?>" method="POST">
+            <form action="<?php echo base_url('TodoController/insertdata'); ?>" method="POST">
                 <div class="form-group">
                   <label>Pet Name</label>
                   <input type="text" name="name" id="name" class="form-control" placeholder="Enter pet name">

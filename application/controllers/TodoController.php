@@ -19,7 +19,7 @@ class TodoController extends MY_Controller {
 		
 	}
 
-	public function insert() {
+	public function insertdata() {
 		
 		$this->load->database();
 	
@@ -33,6 +33,7 @@ class TodoController extends MY_Controller {
 		);
 	
 		$this->db->insert('pet', $data);
-		echo "Message sent successfully!";
+		redirect(base_url(TodoController));
+		// echo "Message sent successfully!";
 	}
 }
