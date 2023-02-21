@@ -6,7 +6,7 @@ class TodoController extends MY_Controller {
 	public function __construct() {
 		parent::__construct();
 		// load model here
-		//$this->load->model('PlayerModel');	
+		$this->load->model('PlayerModel');	
 		$this->load->model('GenericModel');
 		
 	}
