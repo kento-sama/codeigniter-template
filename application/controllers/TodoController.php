@@ -6,7 +6,8 @@ class TodoController extends MY_Controller {
 	public function __construct() {
 		parent::__construct();
 		// load model here
-		$this->load->model('PlayerModel');	
+		//$this->load->model('PlayerModel');	
+		$this->load->model('GenericModel');
 		
 	}
 
@@ -16,8 +17,8 @@ class TodoController extends MY_Controller {
 		 $this->modules[]      = 'todo';
          $this->js_listeners[] = 'Todo.fn.add_todo()';
 		 $this->js_listeners[] = 'Todo.table.generate_table();';
-		 $data['players'] = $this->PlayerModel->get_players();
-         $this->layout('welcome_message', $data);
+		// $data['players'] = $this->PlayerModel->get_players();
+         $this->layout('welcome_message');
 		
 	}
 	public function view_modal(){

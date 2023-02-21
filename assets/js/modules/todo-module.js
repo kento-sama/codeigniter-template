@@ -41,6 +41,7 @@ Todo = function () {
 		function generate_table() {
 		  $("#playertbl").DataTable({
 			ajax: {
+			  type: 'GET',
 			  url: controller + "data_Table",
 			  dataSrc: ''
 			},
