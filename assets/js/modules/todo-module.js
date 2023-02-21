@@ -12,12 +12,35 @@ Todo = function () {
 			});
 		}
 		return {
-			add_product : add_product
+			add_product : add_product,
 		}
 	}();
 
 	var table = function() {
-
+		function view_table(){
+			$('table#productTable').DataTable().destroy();
+			$('table#productTable').DataTable({
+				ajax: {
+					url: controller + "getData",
+					type: 'GET',
+					dataType: 'json',
+					dataSrc: '',
+				},
+				columns: [
+					{data: 'product_name'},
+					{data: 'product_price'},
+					{data: 'product_category'},
+					{
+						render: function(){
+							return '<button class="btn btn-warning">Edit</button> <button class="btn btn-danger">Delete</button>';
+						}
+					}
+				]
+			});
+		}
+		return {
+			view_table : view_table
+		}
 	}();
 
 	var modal = function() {
