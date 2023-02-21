@@ -15,7 +15,7 @@
   <!-- Table View -->
 <div style="margin: 20px;">
     <table class="table table-bordered table-hover table-striped text-center" id="productTable" style="width:100%;">
-      <thead class="thead-dark">
+      <thead>
         <tr>
           <th class="text-center" scope="col">Product Name</th>
           <th class="text-center" scope="col">Price</th>
