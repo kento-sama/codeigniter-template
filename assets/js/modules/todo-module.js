@@ -1,10 +1,6 @@
 Todo = function () {
 	var controller = base_url + 'TodoController/'
 	var property = {};
-	// function buttons(){
-	// 	$show = $("button#thatsme");
-	// 	$create = $("button#createlist");
-	// }
 	var fn = function(){
 		function modal_view(){
 			$("button#thatsme").unbind();
@@ -36,7 +32,23 @@ Todo = function () {
 			add_list:add_list
 		}
 	}();
-	var table = function(){
+	var tables = function(){
+		function gen_table(){
+			// alert("Im here!");
+			$("#maintable").DataTable({
+				ajax:{
+					url: controller + "fetch_task",
+					dataSrc: ''
+				},
+				columns: [
+					{ data: 'item_desc' },
+					{ data: 'status' },
+				]
+			})
+		}
+		return{
+			gen_table:gen_table
+		}
 	}();
 	var modal = function(){
 		function todo_modal(){
@@ -59,7 +71,7 @@ Todo = function () {
 	return {
 		property: property,
 		fn      : fn,
-		table   : table,
+		tables   : tables,
 		modal	: modal
 	}
 }();
