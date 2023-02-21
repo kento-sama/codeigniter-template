@@ -17,11 +17,11 @@
 
 
 
-<script>
+ <!-- <script>
   $(document).ready(function() {
     $('#playertbl').DataTable();
   });
-</script>
+</script> -->
 
 
     

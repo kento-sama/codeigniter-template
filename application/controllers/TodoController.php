@@ -7,6 +7,8 @@ class TodoController extends MY_Controller {
 		parent::__construct();
 		// load model here
 		$this->load->model('PlayerModel');	
+		$this->load->model('GenericModel');
+		
 	}
 
 	public function index()
@@ -14,12 +16,27 @@ class TodoController extends MY_Controller {
 		
 		 $this->modules[]      = 'todo';
          $this->js_listeners[] = 'Todo.fn.add_todo()';
+		 $this->js_listeners[] = 'Todo.table.generate_table();';
+		// $data['players'] = $this->PlayerModel->get_players();
          $this->layout('welcome_message');
 		
 	}
 	public function view_modal(){
 		$this->load->view('addModal');
 	}
+
+	public function data_Table(){
+		//data table here;
+		$this->load->model('PlayerModel');
+
+        // Get player data
+        $data = $this->PlayerModel->get_players();
+
+        // Send data as JSON
+        echo json_encode($data);
+	}
+
+
 	public function savedata()
 	{
 		/*load registration view form*/
