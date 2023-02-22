@@ -48,10 +48,9 @@
 :?>
 <script type="text/javascript">
     $(document).ready(function () {
-        
-	    	<?php foreach ($js_listeners as $listeners): ?>
-	    		<?php echo $listeners; ?>;
-	    	<?php endforeach;?>  
+	    <?php foreach ($js_listeners as $listeners): ?>
+	    	<?php echo $listeners; ?>;
+	    <?php endforeach;?>  
     });
 
 </script>
