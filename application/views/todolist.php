@@ -22,6 +22,7 @@
                             <tr>
                                 <th>TASKS</th>
                                 <th>STATUS</th>
+                                <th>ACTIONS</th>
                             </tr>
                         </thead>
                         <tbody>

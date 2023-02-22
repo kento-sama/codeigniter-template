@@ -19,8 +19,10 @@ class TodoController extends MY_Controller {
         $this->layout('todolist');
 	}
 	public function fetch_task(){
+		$get = $this->input->get("test2");
 		$this->load->model("TodoModel");
-		$results = $this->TodoModel->fetchTask();
+		$results = $this->TodoModel->fetchTask($get);
+		// var_dump($results);
 		echo json_encode($results);
 	}
 	public function todo_modal()
