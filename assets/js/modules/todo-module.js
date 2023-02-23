@@ -3,15 +3,12 @@ Todo = function () {
 	var property = {};
 	var fn = function(){
 		function modal_view(){
-			$("button#thatsme").unbind();
-			$("button#thatsme").on('click',function(){
-				modal.todo_modal();
-			});
-		}
-		function edit_modal(val){
-			$("button#editButton").unbind();
-			$("button#editButton").on('click',function(){
-				alert(val);
+			$("button#buttonModal").unbind();
+			$("button#buttonModal").on('click',function(){
+				var todo_id = $(this).data('id');
+					// property.operation = "2";
+					property.todo_id = todo_id;
+					modal.todo_modal();
 			});
 		}
 		function add_list(){
@@ -36,22 +33,17 @@ Todo = function () {
 		return{
 			modal_view:modal_view,
 			add_list:add_list,
-			edit_modal:edit_modal
 		}
 	}();
 	var tables = function(){
 		function gen_table(){
 			$("#maintable").DataTable().destroy();
 			$("#maintable").DataTable({
-				// "processing":true,
-				// "serverSide":true,
-				// "searchDelay":1000,
 				"ajax":{
 					url: controller + "fetch_task",
 					type:"get",
 					data:function(sentData){
-						sentData.test1 = "1";
-						sentData.test2 = "2";
+						sentData.row_status = "2";
 					},
 					dataSrc:function(returnedData){
 						return returnedData;
@@ -62,13 +54,13 @@ Todo = function () {
 					{ data: 'status' },
 					{ data: 'todo_id',render : function (data)
 						{
-							return "<a href='#' class='btn btn-block btn-warning btn-xs' onclick='Todo.fn.edit_modal(\""+data+"\")' id='editButton'>EDIT</i></a>";
+							return "<button type='button' class='btn btn-block btn-warning btn-xs' id='buttonModal' data-id='"+data+"'>EDIT</i></a>";
 						}
 					},
 				],
-				// "drawCallback":function(){
-				// 	fn.edit_modal();
-				// }
+				"drawCallback":function(){
+					fn.modal_view();
+				}
 			});
 		}
 		return{
@@ -78,11 +70,11 @@ Todo = function () {
 	var modal = function(){
 		function todo_modal(){
 			$.ajax({
-				url:controller+"todo_modal",
+				url:controller+"todo_modal/",
+				type:"post",
 				datatype:"html",
+				data:property,
 				success:function(returnedData){
-					//console.log(returnedData);
-					show_modal(returnedData);
 				},
 				complete: function(){
 					fn.add_list();

@@ -19,7 +19,7 @@ class TodoController extends MY_Controller {
         $this->layout('todolist');
 	}
 	public function fetch_task(){
-		$get = $this->input->get("test2");
+		$get = $this->input->get("row_status",true);
 		$this->load->model("TodoModel");
 		$results = $this->TodoModel->fetchTask($get);
 		// var_dump($results);
@@ -27,7 +27,13 @@ class TodoController extends MY_Controller {
 	}
 	public function todo_modal()
 	{
-        $this->load->view('todo_modal');
+		$id = $this->input->post("todo_id",true);
+		// $operation = $this->input->post("operation");
+		$this->load->model("GenericModel");
+		$condition['todo_id'] = $id;
+		//$condition['row_status'] = $operation;
+		$results = $this->GenericModel->add_create_row("todo","todo_id",$condition);
+		echo $results;
 	}
 	public function insert()
 	{
