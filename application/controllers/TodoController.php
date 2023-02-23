@@ -22,12 +22,27 @@ class TodoController extends MY_Controller {
 		
 	}
 	public function view_modal(){
-		$this->load->view('addModal');
-	}
 
+		$data['player_id']  = $this->input->post('player_id', TRUE);
+		//echo $data['player_id'];
+		// var_dump($data);
+	
+		if($data['player_id'] == NULL)
+		{
+			$condition['row_status'] = 2;
+			$data['player_id'] = $this->GenericModel->add_create_row('playertable', 'id', $condition);
+		}
+		//var_dump($data['player_id']);
+		$player_data = $this->PlayerModel->get_data($data['player_id']);
+		//var_dump($player_data);
+	
+		$this->load->view('addModal', $player_data);
+		
+
+	}
 	public function data_Table(){
 		//data table here;
-		$this->load->model('PlayerModel');
+		//$this->load->model('PlayerModel');
 
         // Get player data
         $data = $this->PlayerModel->get_players();
@@ -35,29 +50,42 @@ class TodoController extends MY_Controller {
         // Send data as JSON
         echo json_encode($data);
 	}
+		
 
 
 	public function savedata()
 	{
 		/*load registration view form*/
 		// $this->load->view('welcome_message');
+		$data = ['first_name'=>$this->input->post('first_name', TRUE),
+				 'last_name'=>$this->input->post('last_name', TRUE),
+				 'age'=>$this->input->post('age', TRUE),
+				 'id'=>$this->input->post('id', TRUE),
+				 'row_status'=> 1
+					];
 	
+		
+		//$this->load->model('PlayerModel');
+		$datadd = $this->PlayerModel->saverecords($data);
+		echo $datadd;
+		
 		/*Check submit button */
-		if($this->input->post('save'))
-		{
-		    $data = ['first_name'=>$this->input->post('first_name'),
-					 'last_name'=>$this->input->post('last_name'),
-					 'age'=>$this->input->post('age')
-		];
-			$response=$this->PlayerModel->saverecords($data);
-			if($response==true){
-				$this->session->set_flashdata('success','Successfully Added!');
-				// redirect(base_url('todo'));
-				redirect('todo');
-			}
-			else{
-					echo "404 error !";
-			}
-		}
+		    
+		
 	}
+	// public function open_modal() {
+		
+	
+	// }
+	
+	// public function save_player() {
+	// 	$post_data['first_name'] = $this->input->post('first_name', TRUE);
+	// 	$post_data['last_name']  = $this->input->post('last_name', TRUE);
+	// 	$post_data['age']        = $this->input->post('age', TRUE);
+	// 	$post_data['player_id']  = $this->inupt->post('player_id', TRUE);
+	
+	// 	$this->PlayerModel->save_player($post_data);
+	
+	// }
+		
 }
