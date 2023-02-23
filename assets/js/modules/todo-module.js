@@ -3,10 +3,9 @@ Todo = function () {
 	var property = {};
 	var fn = function(){
 		function modal_view(){
-			$("button#buttonModal").unbind();
-			$("button#buttonModal").on('click',function(){
-				var todo_id = $(this).data('id');
-					// property.operation = "2";
+			$("button.buttonModal").unbind();
+			$("button.buttonModal").on('click',function(){
+					var todo_id = $(this).data('id') || null;
 					property.todo_id = todo_id;
 					modal.todo_modal();
 			});
@@ -15,11 +14,13 @@ Todo = function () {
 			$("button#createlist").unbind();
 			$("button#createlist").on('click',function(){
 				var item = $("input#item").val();
+				var todo_id = $("input#todo_id").val();
 				$.ajax({
 					url:controller+"insert",
 					type:"post",
-					data:{list:item},
+					data:{list:item,todo_id:todo_id},
 					success:function(returnedData){
+						alert(returnedData);
 						if(returnedData){
 							$('#modal-container').modal('hide');
 							alert("success!");
@@ -43,7 +44,7 @@ Todo = function () {
 					url: controller + "fetch_task",
 					type:"get",
 					data:function(sentData){
-						sentData.row_status = "2";
+						sentData.row_status = "1";
 					},
 					dataSrc:function(returnedData){
 						return returnedData;
@@ -54,7 +55,7 @@ Todo = function () {
 					{ data: 'status' },
 					{ data: 'todo_id',render : function (data)
 						{
-							return "<button type='button' class='btn btn-block btn-warning btn-xs' id='buttonModal' data-id='"+data+"'>EDIT</i></a>";
+							return "<button type='button' class='btn btn-block btn-warning btn-xs buttonModal' data-id='"+data+"'>EDIT</i></a>";
 						}
 					},
 				],
@@ -75,6 +76,7 @@ Todo = function () {
 				datatype:"html",
 				data:property,
 				success:function(returnedData){
+					show_modal(returnedData);
 				},
 				complete: function(){
 					fn.add_list();

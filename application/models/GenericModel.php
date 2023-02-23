@@ -15,8 +15,8 @@ class GenericModel extends CI_Model {
 				}
 				$data = $this->db->get($table);
 				//
-				//$data_id = ($data->num_rows() > 0)? $data->result_array()[0][$column_name] : NULL;
-				$data_id = ($data->num_rows() > 0)? $data->result_array() : NULL;
+				$data_id = ($data->num_rows() > 0)? $data->result_array()[0][$column_name] : NULL;
+				// $data_id = ($data->num_rows() > 0)? $data->result_array() : NULL;
 				if ($data_id == NULL)
 				{
 					

@@ -27,20 +27,26 @@ class TodoController extends MY_Controller {
 	}
 	public function todo_modal()
 	{
-		$id = $this->input->post("todo_id",true);
-		// $operation = $this->input->post("operation");
 		$this->load->model("GenericModel");
-		$condition['todo_id'] = $id;
-		//$condition['row_status'] = $operation;
-		$results = $this->GenericModel->add_create_row("todo","todo_id",$condition);
-		echo $results;
+		$this->load->model("TodoModel");
+		$id = $this->input->post("todo_id",true);
+		//2 draft
+		//1 final
+		//0 deleted
+		if($id == null){
+			$condition['row_status'] = "2";
+			$id = $this->GenericModel->add_create_row('todo','todo_id',$condition);
+		}
+		$results = $this->TodoModel->fetch_one_task($id);
+		$this->load->view('todo_modal',$results);
 	}
 	public function insert()
 	{
 		$item = $this->input->post('list');
-		$data = array("item_desc"=>$item,"status"=>'active');
+		$id = $this->input->post('todo_id');
+		$data = array("item_desc"=>$item,"status"=>'active',"row_status"=>"1");
 		$this->load->model("TodoModel");
-		$x = $this->TodoModel->insertList($data);
+		$x = $this->TodoModel->insertList($data,$id);
 		echo $x;
 	}
 }

@@ -7,7 +7,7 @@
                     CREATE TO DO LIST
                 </div>
                 <div class="card-body">
-                    <button type="button" class="btn btn-primary btn-block btn-sm" id="buttonModal">
+                    <button type="button" class="btn btn-primary btn-block btn-sm buttonModal" data-id="">
                         ADD ITEM
                     </button>
                 </div>
