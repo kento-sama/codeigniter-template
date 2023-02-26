@@ -9,6 +9,7 @@ class GenericModel extends CI_Model {
     {
 		if( ! empty($table) && ! empty($column_name) && ! empty($condition))
 		{
+				//column == row_status
 				$this->db->select($column_name);
 				foreach ($condition as $key => $value) {
 					$this->db->where($key, $value);
@@ -19,9 +20,7 @@ class GenericModel extends CI_Model {
 				// $data_id = ($data->num_rows() > 0)? $data->result_array() : NULL;
 				if ($data_id == NULL)
 				{
-					
-					$this->db->select();
-					//$condition["row_status"] = "1";
+					//$condition["row_status"] = "2";
 					$this->db->insert($table, $condition);
 					$data_id = $this->db->insert_id();
 				}
