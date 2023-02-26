@@ -14,7 +14,7 @@
       <!-- body -->
       <div class="modal-body">
             <label>TO DO ITEM</label>
-            <input class="form-control" id="item" name="item" value ="<?php echo $item_desc;?>"required/>
+            <input class="form-control" id="item" name="item" value ="<?php echo $item_desc;?>" required/>
             <input type="hidden" class="form-control" id="todo_id" name="todo_id" value ="<?php echo $todo_id;?>"required/>
       </div>
       <!-- footer -->
