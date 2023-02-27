@@ -1,6 +1,14 @@
 
         </div>
     </div>
+
+    <!-- jQuery -->
+    <script src="<?php echo base_url(); ?>assets/js/jquery-3.6.3.js"></script>
+    <!-- DataTable -->
+    <script src="<?php echo base_url(); ?>assets/js/dataTables.bootstrap.min.js"></script>
+    <!-- bootstrap -->
+    <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+
 </body>
 
 <script>
@@ -35,12 +43,15 @@
     <?php endforeach; ?>
 <?php endif;?>
 
+<?php if(isset($js_listeners) && !empty ($js_listeners))
+
+:?>
 <script type="text/javascript">
     $(document).ready(function () {
-        <?php if(isset($js_listeners)):?>
-	    	<?php foreach ($js_listeners as $listeners): ?>
-	    		<?php echo $listeners; ?>;
-	    	<?php endforeach;?>
-        <?php endif;?>
+	    <?php foreach ($js_listeners as $listeners): ?>
+	    	<?php echo $listeners; ?>;
+	    <?php endforeach;?>  
     });
+
 </script>
+<?php endif;?>
