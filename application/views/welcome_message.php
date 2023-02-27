@@ -4,7 +4,7 @@
 	<div class="card-header">
 	<h3>Top Dota Player!
 	<!-- data-bs-target="#addForm" data-bs-toggle="modal" -->
-	<button type="button" class="btn btn-secondary float-end"  id ="addbtn" >Add Player</button>	
+	<button type="button" class="btn btn-secondary float-end"  id ="save" data-id="" >Add Player</button>	
 	</h3>
 	</div>
 	<?php
@@ -32,6 +32,7 @@ if($this->session->flashdata('success'))
 				</tr>
 			</thead>
 			<tbody >
+			
 			</tbody>
 		</table>
 	</div>
