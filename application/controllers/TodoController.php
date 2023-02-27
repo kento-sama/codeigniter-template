@@ -6,6 +6,7 @@ class TodoController extends MY_Controller {
 	public function __construct() {
 		parent::__construct();
 			$this->load->model('productmodel');
+			$this->load->model('genericmodel');
 	}
 
 	public function index()
@@ -18,26 +19,27 @@ class TodoController extends MY_Controller {
 
 	// Inserting Data into the Database
 	public function insertData() {
-		if($this->input->post('save')){
-			$data['product_name'] = $this->input->post('product_name');
-			$data['product_price'] = $this->input->post('product_price');
-			$data['product_category'] = $this->input->post('product_category');
+		$data['id'] = $this->input->post('id', TRUE);
+		$data['product_name'] = $this->input->post('name', TRUE);
+		$data['product_price'] = $this->input->post('price', TRUE);
+		$data['product_category'] = $this->input->post('category', TRUE);
 
-			$response = $this->productmodel->saverecords($data);
-		if ($response == true){
-				$this->session->set_flashdata('status', 'Successful Entry!');
-				redirect('todo');
-			}
-			else {
-				echo 'Unsuccessful Entry!';
-				redirect('todo');
-			}
-		}
+		$result = $this->productmodel->saverecords($data);
+
+		echo $result;
 	}
 
 	// Function to load the modal view
 	public function viewModal() {
-		$this->load->view('modal_view');
+		$data['id'] = $this->input->post('id', TRUE);
+
+		if($data['id'] == NULL) {
+			$condition['row_status'] = 2;
+			$data['id'] = $this->genericmodel->add_create_row('products', 'id', $condition);
+		}
+
+		$result = $this->productmodel->get_data($data['id']);
+		$this->load->view('modal_view',$result);
 	}
 
 	// Getting data from the database

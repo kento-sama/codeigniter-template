@@ -1,15 +1,8 @@
 <div id="container">
-  <!-- Alert Message -->
-  <?php if($this->session->flashdata('status')) : ?>
-    <div class="alert alert-success" role="alert">
-        <?php echo $this->session->flashdata('status'); ?>
-    </div>
-  <?php endif; ?>
-
-  <!-- Add Modal Trigger Button -->
+  <!-- Modal Trigger Button -->
 	<div class="d-flex justify-content-between">
     <div style="margin-left:20px;"><h4>List of Products</h4></div>
-    <div style="margin-right:20px;"><button type="button" class="btn btn-primary" id="addBtn">Add Product</button></div>
+    <div style="margin-right:20px;"><button type="button" class="btn btn-primary" id="addEditBtn">Add Product</button></div>
   </div>
 
   <!-- Table View -->
