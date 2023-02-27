@@ -45,13 +45,6 @@ class TodoController extends MY_Controller {
 		$this->load->model("GenericModel");
 		$this->load->model("TodoModel");
 		$id = $this->input->post("todo_id",true);
-		//2 draft
-		//1 final
-		//0 deleted
-		if($id == null){
-			$condition['row_status'] = "2";
-			$id = $this->GenericModel->add_create_row('todo','todo_id',$condition);
-		}
 		$results = $this->TodoModel->fetch_one_task($id);
 		echo json_encode($results);
 	}

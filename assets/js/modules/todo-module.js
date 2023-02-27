@@ -54,7 +54,6 @@ Todo = function () {
 			$("button#deleteButton").on('click',function(){
 				property.todo_id = $(this).data('id');
 				property.row_status = "0";
-				
 				$.ajax({
 					url: controller+"delete_confirm",
 					type:"post",
@@ -84,7 +83,7 @@ Todo = function () {
 										}).then(()=>{window.open(window.location.href,"_self");})
 									}
 								})	
-								
+								return true;
 							}
 						})
 					}
