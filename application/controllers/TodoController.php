@@ -50,11 +50,26 @@ class TodoController extends MY_Controller {
         // Send data as JSON
         echo json_encode($data);
 	}
+	public function deleteData(){
+		
+		$data = ['first_name'=>$this->input->post('first_name', TRUE),
+				 'last_name'=>$this->input->post('last_name', TRUE),
+				 'age'=>$this->input->post('age', TRUE),
+				 'id'=>$this->input->post('id', TRUE),
+				 'row_status'=> 0
+					];
+	
+		
+		//$this->load->model('PlayerModel');
+		$deletedata = $this->PlayerModel->saverecords($data);
+		echo $deletedata;
+	}
 		
 
 
 	public function savedata()
 	{
+
 		/*load registration view form*/
 		// $this->load->view('welcome_message');
 		$data = ['first_name'=>$this->input->post('first_name', TRUE),
@@ -73,6 +88,7 @@ class TodoController extends MY_Controller {
 		    
 		
 	}
+	
 	// public function open_modal() {
 		
 	
