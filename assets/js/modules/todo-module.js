@@ -22,11 +22,17 @@ Todo = function () {
 				  };
 				
 				$.ajax({
-					url: controller + "insert",
+					url: controller + "insertData",
 					type: 'POST',
 					data: formData,
 					success: function(returndata){
-						alert(returndata);
+						if(returndata){
+							alert('Pet added succesfully!');
+						}
+						else{
+							alert('Failed!');
+						}
+						// alert(returndata);
 					}
 				}
 					
@@ -57,6 +63,30 @@ Todo = function () {
 	}();
 
 	var table = function() {
+		function generate_table() {
+			$("#pettable").DataTable({
+				// "processing": true,
+    			// "serverSide": true,
+				ajax: {
+					url: controller + "getData",
+					type: 'GET',
+					dataSrc: function(x){
+						return x
+					}
+				},
+
+				columns: [
+					{ data: 'id' },
+					{ data: 'name' },
+					{ data: 'species' },
+					{ data: 'age' }
+				]
+			});
+		}
+
+		return{
+			generate_table: generate_table
+		}
 
 	}();
 
@@ -82,6 +112,7 @@ Todo = function () {
 	return {
 		property: property,
 		fn      : fn,
+		table 	: table,
 		modal   : modal
 	}
 }();
