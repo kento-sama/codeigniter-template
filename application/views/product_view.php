@@ -6,7 +6,7 @@
   </div>
 
   <!-- Table View -->
-<div style="margin: 20px;">
+  <div style="margin: 20px;">
     <table class="table table-bordered table-hover table-striped text-center" id="productTable" style="width:100%;">
       <thead>
         <tr>

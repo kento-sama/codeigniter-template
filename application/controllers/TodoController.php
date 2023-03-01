@@ -48,4 +48,12 @@ class TodoController extends MY_Controller {
 		$data = $this->productmodel->getrecords();
 		echo json_encode($data);
 	}
+
+	// Deleting the data
+	public function deleteData() {
+		$data['id'] = $this->input->post('id', TRUE);
+		$result = $this->productmodel->updatestatus($data);
+
+		echo json_encode($result);
+	}
 }
