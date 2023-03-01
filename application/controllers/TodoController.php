@@ -57,18 +57,6 @@ class TodoController extends MY_Controller {
     	$data = array('row_status' => 0);
     	$deletedata = $this->PlayerModel->updateRowStatus($id, $data); 
     	echo $deletedata;
-		
-		// $data = ['first_name'=>$this->input->post('first_name', TRUE),
-		// 		 'last_name'=>$this->input->post('last_name', TRUE),
-		// 		 'age'=>$this->input->post('age', TRUE),
-		// 		 'id'=>$this->input->post('id', TRUE),
-		// 		 'row_status'=> 0
-		// 			];
-	
-		
-		// //$this->load->model('PlayerModel');
-		// $deletedata = $this->PlayerModel->saverecords($data);
-		// echo $deletedata;
 	}
 		
 
@@ -94,20 +82,5 @@ class TodoController extends MY_Controller {
 		    
 		
 	}
-	
-	// public function open_modal() {
-		
-	
-	// }
-	
-	// public function save_player() {
-	// 	$post_data['first_name'] = $this->input->post('first_name', TRUE);
-	// 	$post_data['last_name']  = $this->input->post('last_name', TRUE);
-	// 	$post_data['age']        = $this->input->post('age', TRUE);
-	// 	$post_data['player_id']  = $this->inupt->post('player_id', TRUE);
-	
-	// 	$this->PlayerModel->save_player($post_data);
-	
-	// }
 		
 }

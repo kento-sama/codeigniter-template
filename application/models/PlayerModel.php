@@ -1,17 +1,7 @@
 <?php
 class PlayerModel extends CI_Model 
 {
-	// function saverecords($data)
-	// {
-    //     return $this->db->insert('playertable',$data);
-	// }
-	// // public function get_players() {
-    // //     $this->db->select('*');
-    // //     $this->db->from('playertable');
-	// // 	$this->db->order_by('id','desc');
-    // //     $query = $this->db->get();
-    // //     return $query->result();
-    // // }
+	
     function saverecords($post_data){
             $this->db->where('id', $post_data['id']);
             $result = $this->db->update("playertable",$post_data);

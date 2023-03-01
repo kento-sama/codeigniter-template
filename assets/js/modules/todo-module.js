@@ -94,35 +94,9 @@ Todo = function () {
 				}
 			  });
 			});
-			//return false;
 		  }
 		
-		// function delete_data(){
-		// 	$('button.delete-btn').unbind();
-		// 	$('button.delete-btn').on('click', function() {
-		// 		property.id = $(this).data('id');
-				
-				
-		// 		if(confirm('Are you sure you want to delete this Player?')){
-		// 			$.ajax({
-		// 				url: controller + 'deleteData',
-		// 				type: 'POST',
-		// 				data: property,
-		// 				success: function(returnData){
-		// 					if(returnData){
-		// 						$('#modal-container').modal('hide');
-		// 						alert('Successfully Deleted !');
-		// 						location.reload();
-		// 					}
-		// 					else {
-		// 						alert('Error in Deleting Record');
-		// 					}
-		// 				}
-		// 			});
-		// 		}
-		// 	});
-		// 	//return false;
-		// }
+	
 		
 	
 
