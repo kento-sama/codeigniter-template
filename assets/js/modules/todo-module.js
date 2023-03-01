@@ -65,8 +65,6 @@ Todo = function () {
 	var table = function() {
 		function generate_table() {
 			$("#pettable").DataTable({
-				// "processing": true,
-    			// "serverSide": true,
 				ajax: {
 					url: controller + "getData",
 					type: 'GET',

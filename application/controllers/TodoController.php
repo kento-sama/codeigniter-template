@@ -34,16 +34,8 @@ class TodoController extends MY_Controller {
 	}
 
 	public function getData(){
-		// Your code to retrieve data from database
+		// Retrieve data from database
 		$data = $this->MyModel->get_data();
-
-		// Return data as a JSON response
-		// $output = array(
-		// 	"draw" => $_POST['draw'],
-		// 	"recordsTotal" => $this->MyModel->count_all(),
-		// 	"recordsFiltered" => $this->MyModel->count_filtered(),
-		// 	// "data" => $data,
-		// );
 		echo json_encode($data);
 	}
 
