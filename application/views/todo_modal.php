@@ -16,6 +16,7 @@
             <label>TO DO ITEM</label>
             <input class="form-control" id="item" name="item" value ="<?php echo $item_desc;?>" required/>
             <input type="hidden" class="form-control" id="todo_id" name="todo_id" value ="<?php echo $todo_id;?>"required/>
+            <input type="hidden" class="form-control" id="row_status" name="row_status" value ="<?php echo $row_status;?>"required/>
       </div>
       <!-- footer -->
       <div class="modal-footer">
