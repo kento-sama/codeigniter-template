@@ -16,6 +16,12 @@
 <script type = 'text/javascript' src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
 
 
+<!-- SWEET ALERT -->
+<script type = 'text/javascript' src="<?php echo base_url();?>assets/js/sweetalert.min.js"></script>
+<script type = 'text/javascript' src="<?php echo base_url();?>assets/js/sweetalert2@11.js"></script>
+
+
+
 
  <!-- <script>
   $(document).ready(function() {

@@ -10,19 +10,22 @@ Todo = function () {
 				//console.log(player_id);
 				property.player_id  = player_id;
 				modal.add_modal();
+				
 
 				return false;
+				
 			});
 		}
 		function saveData(){
-			$('button#save').unbind();
-			$('button#save').on('click', function() {
-				//modal.add_modal();
+			$('button#submitbtn').unbind();
+			$('button#submitbtn').on('click', function() {
+				modal.add_modal();
 				var formData = {
 					id : $('#id').val(),
 					first_name: $('#first_name').val(),
 					last_name: $("#last_name").val(),
 					age: $("#age").val(),
+					status: $("#row_status").val()
 				  };
 				
 				 $.ajax({
@@ -30,47 +33,77 @@ Todo = function () {
 					type: 'POST',
 					data: formData,
 					success: function(returnData){
-						//alert(returnData);
-						// if(returnData != ''){
-						// 	alert('here');
-						// }
 						if(returnData){
                             $('#modal-container').modal('hide');
-                            alert('Successfully Added !');
+							if(formData.status==2){
+								alert('Successfully Added !');
 							location.reload();
+							}else{
+								alert('Successfully Updated !');
+								location.reload();
+							}
+                           
                         }
                         else {
-                            alert('Error in adding product');
+                            alert('Error in Adding Player');
                         }
 					}
 					
 				})
-//return false;
+          //return false;
 			});
 		}
-		// function edit_todo() {
-		// 	$('button#editbtn').unbind();
-		// 	$('button#editbtn').on('click', function() {		
-		// 		alert ($(this).data('id'));
-		// 		var todo_id = $(this).data('id');
-		// 		$.ajax({
-		// 			url: controller + "edit_player" + todo_id,
-		// 			datatype: 'json',
-		// 			success: function(response) {
-		// 				modal.edit_modal(response);
-		// 			}
-		// 		});
-		// 		modal.edit_modal();
-
-		// 		return false;
-		// 	});
-		// }
+		function delete_data() {
+			$('button.delete-btn').unbind();
+			$('button.delete-btn').on('click', function() {
+			  property.id = $(this).data('id');
+				
+			  Swal.fire({
+				title: 'Are you sure?',
+				text: 'You will not be able to recover this player!',
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonText: 'Yes, delete it!',
+				cancelButtonText: 'Cancel',
+				reverseButtons: true
+			  }).then((result) => {
+				if (result.isConfirmed) {
+				  $.ajax({
+					url: controller + 'deleteData',
+					type: 'POST',
+					data: property,
+					success: function(returnData) {
+					  if (returnData) {
+						$('#modal-container').modal('hide');
+						Swal.fire({
+						  title: 'Deleted!',
+						  text: 'The player has been deleted.',
+						  icon: 'success'
+						}).then(() => {
+						  location.reload();
+						});
+					  } else {
+						Swal.fire({
+						  title: 'Error!',
+						  text: 'Error in Deleting Record',
+						  icon: 'error'
+						});
+					  }
+					}
+				  });
+				}
+			  });
+			});
+		  }
+		
+	
+		
 	
 
 		return {
 			add_todo: add_todo,
-			//edit_todo: edit_todo
-			saveData: saveData
+			saveData: saveData,
+			delete_data: delete_data
 		}										
 	}();
 
@@ -87,32 +120,14 @@ Todo = function () {
 				},
 				complete: function(){
 					fn.saveData();
+				
 					// config();
 				},
 			  });
 		}
-		// function edit_modal(todo) {
-		// 	$.ajax({
-		// 		url: controller + "edit_player",
-		// 		datatype: 'html',
-		// 		success: function(response) {
-		// 			show_modal(response);
-		// 			alert(todo.id);
-		// 			// Fill form fields with existing data
-		// 			$('#id').val(todo.id);
-		// 			$('#first_name').val(todo.first_name);
-		// 			$('last_name').val(todo.last_name);
-		// 			$('age').val(todo.age);
-		// 		},
-		// 		complete: function() {
-		// 			// config();
-		// 		},
-		// 	});
-		// }
 
 		return {
 			add_modal: add_modal
-			//edit_modal: edit_modal
 		}
 	}();
 
@@ -133,13 +148,13 @@ Todo = function () {
 				data: 'id',
 				render: function(data, type, row) {
 				  return '<button type="button" class="edit-btn btn btn-warning" id="save" data-id="'+data+'">Edit</button>';
-				  //data-id="'+data+'" 
 				}
 			  },
 			  {
-				data: null,
+				data: 'id',
 				render: function(data, type, row) {
-				  return '<button class="delete-btn btn btn-danger">Delete</button>';
+				  return '<button type="button" class="delete-btn btn btn-danger"  data-id="'+data+'">Delete</button>';
+				  //
 				}
 			  }
 			],
@@ -155,8 +170,10 @@ Todo = function () {
 			  }
 			],
 			order: [[0, "desc"]],
-			 drawCallback: function(settings) {
+			 drawCallback: function() {
 				fn.add_todo();
+				fn.delete_data();
+				
 			 
 				
 
