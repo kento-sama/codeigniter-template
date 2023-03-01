@@ -22,6 +22,13 @@ class PlayerModel extends CI_Model
         // return  $insert_id;
      }
 
+
+     function updateRowStatus($id) {
+        $this->db->where('id', $id);
+        $result = $this->db->update("playertable", array('row_status' => 0));
+        return $result;
+    }
+
     public function get_players() {
         $this->db->select('*');
         $this->db->where('row_status', 1);

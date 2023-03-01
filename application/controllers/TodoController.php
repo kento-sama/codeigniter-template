@@ -51,18 +51,24 @@ class TodoController extends MY_Controller {
         echo json_encode($data);
 	}
 	public function deleteData(){
+
+
+		$id = $this->input->post('id', TRUE);
+    	$data = array('row_status' => 0);
+    	$deletedata = $this->PlayerModel->updateRowStatus($id, $data); 
+    	echo $deletedata;
 		
-		$data = ['first_name'=>$this->input->post('first_name', TRUE),
-				 'last_name'=>$this->input->post('last_name', TRUE),
-				 'age'=>$this->input->post('age', TRUE),
-				 'id'=>$this->input->post('id', TRUE),
-				 'row_status'=> 0
-					];
+		// $data = ['first_name'=>$this->input->post('first_name', TRUE),
+		// 		 'last_name'=>$this->input->post('last_name', TRUE),
+		// 		 'age'=>$this->input->post('age', TRUE),
+		// 		 'id'=>$this->input->post('id', TRUE),
+		// 		 'row_status'=> 0
+		// 			];
 	
 		
-		//$this->load->model('PlayerModel');
-		$deletedata = $this->PlayerModel->saverecords($data);
-		echo $deletedata;
+		// //$this->load->model('PlayerModel');
+		// $deletedata = $this->PlayerModel->saverecords($data);
+		// echo $deletedata;
 	}
 		
 
