@@ -14,8 +14,8 @@
     </div>
   </div>
 
-  <!-- <div class="container">
-    <table class="table">
+  <div class="container">
+    <table class="table table-bordered" id="pettable">
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -24,19 +24,8 @@
           <th scope="col">Age</th>
         </tr>
       </thead>
-      <tbody class="table-group-divider">
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>5</td>
-        </tr>
+      <tbody >
+        
       </tbody>
     </table>
-  </div> -->
+  </div>
