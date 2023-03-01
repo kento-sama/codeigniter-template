@@ -23,6 +23,7 @@ Todo = function () {
 					category: $('input#product_category').val(),
 					status: $('input#row_status').val()
 				};
+				console.log(product);
 				$.ajax ({
 					url: controller + "insertData",
 					type: 'POST',
@@ -45,9 +46,54 @@ Todo = function () {
 				});
 			});
 		}
+		function delete_data() {
+			$('.deleteBtn').unbind();
+			$('.deleteBtn').on('click', function() {
+				var id = $(this).data('id');
+				property.id = id;
+				Swal.fire({
+					title: "Are you sure?",
+					text: "You will not be able to recover this data!",
+					type: "warning",
+					showCancelButton: true,
+					confirmButtonColor: "#DC3545",
+					confirmButtonText: "Yes, delete it!",
+					cancelButtonText: "No, cancel!",
+					closeOnConfirm: false,
+					closeOnCancel: false
+				}).then((result) => {
+					if (result.isConfirmed) {
+						$.ajax({
+							url: controller + "deleteData",
+							type: 'POST',
+							data: property,
+							success: function(returnedData) {
+									if (returnedData) {
+											Swal.fire({
+													title: 'Deleted!',
+													text: 'Data has been deleted successfully!',
+													icon: 'success'
+											}).then(() => {
+													location.reload();
+											});
+									} else {
+											Swal.fire({
+													title: 'Error!',
+													text: 'Error in Deleting Record',
+													icon: 'error'
+											});
+									}
+							}
+					});
+					}
+				});
+			});
+		}
+
 		return {
 			add_product : add_product,
-			insert_data : insert_data
+			insert_data : insert_data,
+			delete_data : delete_data
 		}
 	}();
 
@@ -67,12 +113,13 @@ Todo = function () {
 					{data: 'product_category'},
 					{data: 'id',
 						render: function(data){
-							return '<button type="button" class="btn btn-warning" id="addEditBtn" data-id="'+data+'">Edit</button> <button class="btn btn-danger">Delete</button>';
+							return '<button type="button" class="btn btn-warning" id="addEditBtn" data-id="'+data+'">Edit</button> <button class="btn deleteBtn btn-danger" data-id="'+data+'">Delete</button>';
 						}
 					}
 				],
 				drawCallback: function() {
 					fn.add_product();
+					fn.delete_data();
 				}
 			});
 		}
