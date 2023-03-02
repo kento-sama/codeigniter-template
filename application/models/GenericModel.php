@@ -22,12 +22,10 @@ class GenericModel extends CI_Model {
     		if ($data_id == NULL)
     		{
     			$this->db->insert($table, $condition);
-    			$$data_id = $this->db->insert_id();
+    			$data_id = $this->db->insert_id();
     		}
 
     		return $data_id;
     	}
-
-    	return NULL;
     }
 }
