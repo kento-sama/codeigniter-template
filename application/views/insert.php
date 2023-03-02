@@ -5,7 +5,7 @@
         <div class="card">
           <div class="card-header">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" id="pets">
+            <button type="button" class="btn btn-primary pets" data-id="">
                 Add New Pet
             </button>
           </div>
@@ -22,6 +22,7 @@
           <th scope="col">Pet Name</th>
           <th scope="col">Species</th>
           <th scope="col">Age</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody >

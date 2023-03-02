@@ -4,8 +4,11 @@ Todo = function () {
 
 	var fn = function() {
 		function view_modal(){
-			$("button#pets").unbind();
-			$("button#pets").on('click', function(){
+			$("button.pets").unbind();
+			$("button.pets").on('click', function(){
+				
+				property.pet_id = $(this).data('id') || null;
+				
 				modal.my_modal();
 
 				return false;
@@ -16,43 +19,28 @@ Todo = function () {
 			$("button#save").on('click', function(){
 
 				var formData = {
+					id: $("#id").val(),
 					name: $("#name").val(),
 					species: $("#species").val(),
 					age: $("#age").val(),
 				  };
 				
 				$.ajax({
-					url: controller + "insertData",
+					url: controller + "saveData",
 					type: 'POST',
 					data: formData,
 					success: function(returndata){
 						if(returndata){
+
 							alert('Pet added succesfully!');
+							location.reload();
 						}
 						else{
 							alert('Failed!');
 						}
-						// alert(returndata);
 					}
-				}
-					
+				}	
 				)
-
-				
-				// $.ajax ({
-                //     url: controller + "insert",
-                //     type: 'POST',
-                //     data: {name1:name, name2:spe, name3:age},
-                //     success: function(response){
-                //         if(response){
-                //             $('#modal-container').modal('hide');
-                //             alert('success');
-                //         }
-                //         else {
-                //             alert('insert error');
-                //         }
-                //     }
-                // });
 			});
 		}
 
@@ -64,6 +52,7 @@ Todo = function () {
 
 	var table = function() {
 		function generate_table() {
+
 			$("#pettable").DataTable({
 				ajax: {
 					url: controller + "getData",
@@ -72,13 +61,28 @@ Todo = function () {
 						return x
 					}
 				},
-
 				columns: [
 					{ data: 'id' },
 					{ data: 'name' },
 					{ data: 'species' },
-					{ data: 'age' }
-				]
+					{ data: 'age' },
+					{ data: 'id',
+						render: function(data) {
+							return '<button type="button" class="btn btn-warning pets" data-id="'+data+'" >Edit</button>';
+						}
+					}
+
+					// { data: null,
+					// 	render: function(data, type, row) {
+					// 		return '<button class="delete-btn btn btn-danger" >Delete</button>'
+					// 	}
+					// }
+				],
+
+				drawCallback: function(){
+					fn.view_modal();
+				}
+
 			});
 		}
 
@@ -93,6 +97,8 @@ Todo = function () {
 			$.ajax({
 				url:controller + "open_modal",
 				datatype:"html",
+				type: "POST",
+				data: property,
 				success:function(response){
 					show_modal(response);
 				},

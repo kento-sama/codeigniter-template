@@ -3,10 +3,11 @@
     </div>
 
     <!-- jQuery -->
-    <script src="<?php echo base_url(); ?>assets/js/jquery-3.6.3.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/jquery-3.6.0.min.js"></script>
     <!-- DataTable -->
     <script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/dataTables.bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/dataTables.bootstrap5.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/dataTables.buttons.min.js"></script>
     <!-- bootstrap -->
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 
