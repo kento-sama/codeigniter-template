@@ -38,10 +38,12 @@ class TodoController extends MY_Controller {
 	}
 
 	public function saveData() {
+		//json data here
 		$post_data['id']  = $this->input->post('id', TRUE);
 		$post_data['name'] = $this->input->post('name', TRUE);
 		$post_data['species']  = $this->input->post('species', TRUE);
 		$post_data['age']  = $this->input->post('age', TRUE);
+		$post_data['row_status']  = $this->input->post('row_status', TRUE);
 
 		echo $this->MyModel->save_data($post_data);
 	}
@@ -53,6 +55,34 @@ class TodoController extends MY_Controller {
 		echo json_encode($data);
 
 	}
+
+	public function getDelete(){
+		// use public function edit_data($id)
+
+		$id = $this->input->post('pet_id', TRUE);
+		//ga return ug data nga associative array from model
+		$data = $this->MyModel->edit_data($id);
+		echo json_encode($data);
+
+	}
+
+	public function deleteData() {
+		// $id = $this->input->post('id');
+
+		$post_data['id']  = $this->input->post('pet_id', TRUE);
+		// $post_data['name'] = $this->input->post('name', TRUE);
+		// $post_data['species']  = $this->input->post('species', TRUE);
+		// $post_data['age']  = $this->input->post('age', TRUE);
+		$post_data['row_status']  = $this->input->post('row_status', TRUE);
+
+		// $data_id  = $this->input->post('pet_id', TRUE);
+
+		// $data_id  = $this->input->post('row_status', TRUE);
+
+		$this->load->model('MyModel');
+		echo $this->MyModel->save_data($post_data);
+
+	  }
 
 
 }

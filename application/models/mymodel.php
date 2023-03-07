@@ -24,7 +24,7 @@ public function save_data($post_data = [])
 		$data['species']    = $post_data['species'];
 		$data['age']	    = $post_data['age'];
 
-		$data['row_status'] = "1";
+		$data['row_status'] = $post_data['row_status'];
 
 		$this->db->where('id', $post_data['id']);
 		return $this->db->update('pet', $data);
@@ -45,5 +45,11 @@ public function edit_data($id) {
 
 	return ($data->num_rows() > 0) ? $data->result_array()[0] : [];
 }
+
+// public function delete_data($id){
+// 	$this->db->where("id", $id);
+// 	$this->db->delete("pet");
+// 	return true;
+// }
 
 }

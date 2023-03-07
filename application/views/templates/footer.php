@@ -10,6 +10,8 @@
     <script src="<?php echo base_url(); ?>assets/js/dataTables.buttons.min.js"></script>
     <!-- bootstrap -->
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+    <!-- Sweet Alert -->
+    <script src="<?php echo base_url(); ?>assets/js/sweetalert2.min.js"></script>
 
 </body>
 
