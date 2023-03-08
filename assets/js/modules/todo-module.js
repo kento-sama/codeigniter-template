@@ -43,17 +43,14 @@ Todo = function () {
 							alert('Failed!');
 						}
 					}
-				}	
-				)
+				})
 			});
 		}
 
 		function delete_data()
 		{
-			$("button#save").unbind();
+			$("button#petsDelete").unbind();
 			$("button.petsDelete").on('click', function(){ 
-
-
 
 				property.pet_id = $(this).data('id') || null;  
 				property.row_status = '0';
@@ -63,46 +60,48 @@ Todo = function () {
 					method: "POST",
 					data: property,
 
-					success:function(IsReturned){
-						//data ID gikan sa button
+					success:function(returndata){
+						// data ID gikan sa button
 						// alert(data);
 						
-						var pets = JSON.parse(IsReturned);
-
-						property.pet_list = {
-							name: pets.name,
-							species: pets.species,
-							age: pets.age
-						  };
-
-						// property.pet_list = pets['name'];
+						var pets = JSON.parse(returndata);
+						pets.row_status = "0";
+						// console.log(pets);
 
 						Swal.fire({
 							icon:"warning",
-							title: "Delete Item",
-							html: "Are you sure you want to delete:" +pet_list+"<p><button type='button' class='btn btn-danger btn-xs btn-block mt-2' onclick='Swal.clickConfirm()'>Delete</button></p>",
+							title: "Delete Data",
+							html: "Are you sure you want to delete this data? <p><button type='button' class='btn btn-danger btn-xs btn-block mt-2' onclick='Swal.clickConfirm()'>Yes, delete it!</button></p>",
 							showConfirmButton: false,
 							showCloseButton: true,
 							preConfirm: function(){
+								console.log(pets);
 								$.ajax({
 									url: controller + "saveData",
 									type: "POST",
-									data: property,
-									success: function(){
+									data: pets,
+									success: function(data){
+										if(data)
+
 										Swal.fire({
 											icon: "success",
-											title: "Item deleted",
-											text: pet_list + "has been deleted.",
+											title: "Your data has been deleted.",
 											allowOutsideClick: false,
 											showConfirmButton: false,
 											showCloseButton: true,
 										}).then(()=>{window.open(window.location.href, "_self");})
+										else{
+											Swal.fire({
+												icon: "Error",
+												title: "Fail to delete data.",
+												allowOutsideClick: false,
+												showConfirmButton: false,
+												showCloseButton: true,
+											}).then(()=>{window.open(window.location.href, "_self");})
+										}
 									}
 								})
 							}
-
-
-
 						})
 						
 
@@ -111,45 +110,6 @@ Todo = function () {
 				}) 		 
 		   })
 		}
-
-		
-
-		// function delete_data()
-		// {
-		// 	$("button.petsDelete").unbind();
-		// 	$("button.petsDelete").on('click', function() {
-
-		// 		var id = $(this).data('id');
-
-		// 		Swal.fire({
-		// 		  title: 'Are you sure?',
-		// 		  text: "You won't be able to revert this!",
-		// 		  icon: 'warning',
-		// 		  showCancelButton: true,
-		// 		  confirmButtonColor: '#3085d6',
-		// 		  cancelButtonColor: '#d33',
-		// 		  confirmButtonText: 'Yes, delete it!'
-
-		// 		}).then((result) => {
-		// 		  if (result.isConfirmed) {
-		// 			$.ajax({
-		// 			  type: 'POST',
-		// 			  url: controller + "deleteData",
-		// 			  data: {id: id},
-		// 			  success: function() {
-		// 				Swal.fire(
-		// 				  'Deleted!',
-		// 				  'Your data has been deleted.',
-		// 				  'success'
-		// 				)
-		// 				location.reload();
-		// 			  }
-		// 			});
-		// 		  }
-		// 		})
-		// 	  });
-			  
-		// }
 
 		return{
 			view_modal:view_modal,
