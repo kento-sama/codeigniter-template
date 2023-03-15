@@ -5,24 +5,30 @@
 </div>
 <div class="modal-body">
   
-
+  <div>
     <input type="hidden" id="id" value="<?php echo $id;?>" />
 
-    <label>Pet Name</label>
-    <input type="text" name="name" id="name" value="<?php echo $name;?>" />
-    <!-- <input type="text" name="name" id="name" class="form-control" placeholder="Enter pet name"> -->
+    <div >
+      <label>Pet Name</label>
+      <input type="text" class="form-control" name="name" id="name" value="<?php echo $name;?>" />
+    </div>
 
-    <label>Species</label>
-    <input type="text" name="species" id="species" value="<?php echo $species;?>" />
-    <!-- <input type="text" name="species" id="species" class="form-control" placeholder="Enter species"> -->
+    <div >
+      <label>Species</label>
+      <input type="text" class="form-control" name="species" id="species" value="<?php echo $species;?>" />
+    </div>
 
-    <label>Age</label>
-    <input type="text" name="age" id="age" value="<?php echo $age;?>" />
-    <!-- <input type="number" name="age" id="age" class="form-control" placeholder="Enter pet age"> -->
+    <div >
+      <label>Age</label>
+      <input type="text" class="form-control" name="age" id="age" value="<?php echo $age;?>" />
+    </div>
 
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <button type="button" id="save" class="btn btn-primary">Save changes</button>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <button type="button" id="save" class="btn btn-primary">Save changes</button>
+    </div>
 
+  </div>
 
 
     <!-- <div class="form-group">

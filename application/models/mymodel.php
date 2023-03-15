@@ -18,17 +18,16 @@ public function save_data($post_data = [])
 {
 	if( ! empty($post_data))
 
-
 	{
+		// var_dump($post_data);
 		$data['name']       = $post_data['name'];
 		$data['species']    = $post_data['species'];
 		$data['age']	    = $post_data['age'];
 
-		$data['row_status'] = "1";
+		$data['row_status'] = $post_data['row_status'];
 
 		$this->db->where('id', $post_data['id']);
-		return $this->db->update('pet', $data);
-		
+		return $this->db->update('pet', $data);	
 	}
 	
 }
